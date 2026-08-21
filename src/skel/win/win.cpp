@@ -2342,6 +2342,8 @@ WinMain(HINSTANCE instance,
 
 						if ( startupDeactivate || ControlsManager.GetJoyButtonJustDown() != 0 )
 							++gGameState;
+						else if ( CPad::GetPad(0)->NewState.CheckForInput() )	
+							++gGameState;	
 						else if ( CPad::GetPad(0)->GetLeftMouseJustDown() )
 							++gGameState;
 						else if ( CPad::GetPad(0)->GetEnterJustDown() )
